@@ -10,6 +10,6 @@
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/degree.png)
 
-### Evolution of SIR model (42 steps) 
+### Evolution of SIR model 
 
-![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/animation.gif)
+![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/ezgif.com-resize.gif)
