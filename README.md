@@ -12,4 +12,4 @@
 
 ### Evolution of SIR model 
 
-![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/ezgif.com-resize.gif)
+![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/spread1.gif)
