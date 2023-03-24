@@ -8,10 +8,10 @@ The geodataframe contains information regarding the position of 61036 olive bunc
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/map.png)
 
-Furthermore, we can show some interesting relations between olive bunches and municipalities. In the two following choropleths municipalities are colored according to the number of olive bunches they contain (left) and the density of olive bunches on their territory (right), i.e. $\frac{n_olives}{area}$. 
+Furthermore, we can show some interesting relations between olive bunches and municipalities. In the two following choropleths municipalities are colored according to the number of olive bunches they contain (left) and the density of olive bunches on their territory (right), i.e. $\frac{#olives}{area}$. 
 
 
-<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/olive_trees_xmun.png" width="400" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/olive_trees_xmun_scaled.png" width="400" height="400" />
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/olive_trees_xmun.png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/olive_trees_xmun_scaled.png" width="500" height="400" />
 
 ## Degree 
 
