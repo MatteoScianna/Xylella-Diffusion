@@ -8,6 +8,11 @@ The geodataframe contains information regarding the position of 61036 olive bunc
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/map.png)
 
+Furthermore, we can show some interesting relations between olive bunches and municipalities. In the two following choropleths municipalities are colored according to the number of olive bunches they contain (left) and the density of olive bunches on their territory (right), i.e. $\frac{num. olive bunches}{area}. 
+
+
+![](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/olive_trees_xmun.png){ width=40% } ![](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/olive_trees_xmun_scaled.png){ width=40% } 
+
 ## Degree 
 
 From the geodataframe containing the geometries of different bunches, it is possible to define a network where each node is an olive bunch and two nodes share an edge if the corresponding olive bunches lay at a distance lower than a given threshold. To do so, for each pair of polygons the distance have been calculated considering the nearest points between the two. From that, an edgelist is defined in the classical "source-target-distance" way.
