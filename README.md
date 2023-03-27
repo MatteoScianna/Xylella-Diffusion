@@ -22,6 +22,7 @@ In the plot below, the histogram for the degree distribution of the network is p
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/degree_distribution.png)
 
+We can then have a more visual idea of the distribution of the nodes in the space, together with their degree. 
 In the following plot, olive bunches are highlighted according to their degree centrality, in a network with threshold equal to 1 km. 
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/degree.png)
