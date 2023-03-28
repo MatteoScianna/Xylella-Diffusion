@@ -50,5 +50,5 @@ Now it is time to simulate the possible spread of an epidemic. In this first sce
 ### Degree-based Vaccination
 One possible way to vaccinate nodes is according to their degree. In particular, we start removing from the graph nodes with higher degree and we go on until all nodes are removed. We are interested in the evolution of the size of the giant component of the graph according to different percentages of nodes removed in this way. 
 This process is shown in the plots below, respectively with a simple scatterplot and with a map, where nodes in red are the ones belonging to the giant component. 
-<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/evoluton_S_degree,png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/biggest_comp.gif" width="500" height="400" />
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/evolution_S_degree,png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/biggest_comp.gif" width="500" height="400" />
 
