@@ -17,7 +17,13 @@ Below, a dynamic plot for the density of olive trees per municipality.
 
 ## Degree 
 
-From the geodataframe containing the geometries of different bunches, it is possible to define a network where each node is an olive bunch and two nodes share an edge if the corresponding olive bunches lay at a distance lower than a given threshold. To do so, for each pair of polygons the distance have been calculated considering the nearest points between the two. From that, an edgelist is defined in the classical "source-target-distance" way.
+From the geodataframe containing the geometries of different bunches, it is possible to define a network where each node is an olive bunch and two nodes share an edge if the corresponding olive bunches lay at a distance lower than a given threshold. To do so, for each pair of polygons the distance have been calculated considering the nearest points between the two. The two pictures below show an example of this process for the olive bunches in the municipality of Lecce. From a randomly chosen target olive bunch, the first choropleth shows the distance of other bunches in the same municipality colored according to their distance. The .gif map shows instead the neighbors of the target olive bunch for different increasing thresholds in meters. 
+
+![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/lecce_dist.png)
+![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/neighbors.gif)
+
+This process is performed for every couple of olive bunches in the dataset, assigning to it a distance.  
+From that, an edgelist is defined in the classical "source-target-distance" way.
 In the plot below, the histogram for the degree distribution of the network is presented.
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/degree_distribution.png)
