@@ -97,10 +97,17 @@ In practice, what happens in a simulation scenario is that given an infected oli
 Modelling long-range dispersal is a more difficult challenge, since lots of external factors, such as wind and cars, may contribute to the long-distance diffusion of the epidemic. Here, an isotropic stochastic dispersal is proposed. To each olive grove a weighted probability of generating a random disperser is assigned, given by $\psi N_{t}(x,y)$, where $\psi \in [0,1]$. Hence, groves with a higher level of self infection will have a higher probability of generating a random dispersal. From this, if $\psi N_{t}(x,y) \geq q$, a random number of dispersers $M \in \{1,...,M_{max}\}$ infect $M$ olive groves according to a 2D Gaussian distribution $N(0,d)$. 
 Constants are fixed as $\psi = 1, q = 0.2, M_{max} = 5$ and $d=20km$.
 
+### Simulation
+
 To summarize the whole process, at time $t$ all infected olive groves increase their self level of infection according to equation **(1)**, then for each infected olive grove those neighbors in an average distance of $100 m$ are infected according to equation **(2)** and only for those with a self level of infection greater than a threshold $p$, $M$ dispersers **$^1$** infect random susceptible olive groves according to the 2D Gaussian distribution. 
 
 **$^1$** Note that since the number of disperser for each olive grove is random, the long range diffusion process is completely stochastic.
 
+The following plots shows an example for one simulation of the process in a time space of 5 years.
+
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_0y.png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_1y.png" width="500" height="400" />
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_2y.png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_3y.png" width="500" height="400" />
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_3y.png" width="500" height="400" /> 
 
 ## Evolution of SIR model 
 
@@ -113,7 +120,7 @@ Now it is time to simulate the possible spread of an epidemic. In this first sce
 ## Degree-based Vaccination
 One possible way to vaccinate nodes is according to their degree. In particular, we start removing from the graph nodes with higher degree and we go on until all nodes are removed. We are interested in the evolution of the size of the giant component of the graph according to different percentages of nodes removed in this way. 
 This process is shown in the plots below, respectively with a simple scatterplot and with a map, where nodes in red are the ones belonging to the giant component. 
-<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/evolution_S_degree.png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/biggest_comp.gif" width="500" height="400" />
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/evolution_S_degree.png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/biggest_comp.gif" width="500" height="400">
 
 # Simulations and Results
 
