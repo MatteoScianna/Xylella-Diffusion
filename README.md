@@ -63,6 +63,7 @@ Having sharply reduced the number of nodes in the network, it is way more agile 
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/betweenness_centrality_munic.png)
 
+
 # Models for Epidemic Diffusion
 
 As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty. Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, two main frameworks are presented. 
@@ -99,15 +100,14 @@ Constants are fixed as $\psi = 1, q = 0.2, M_{max} = 5$ and $d=20km$.
 
 ### Simulation
 
-To summarize the whole process, at time $t$ all infected olive groves increase their self level of infection according to equation **(1)**, then for each infected olive grove those neighbors in an average distance of $100 m$ are infected according to equation **(2)** and only for those with a self level of infection greater than a threshold $p$, $M$ dispersers **$^1$** infect random susceptible olive groves according to the 2D Gaussian distribution. 
+To summarize the whole process, at time $t$ all infected olive groves increase their self level of infection according to equation **(1)**, then for each infected olive grove those neighbors in an average distance of $100 m$ are infected according to equation **(2)** and only for those with a self level of infection greater than a threshold $p$, $M$ dispersers infect random susceptible olive groves according to the 2D Gaussian distribution. 
+Note that since the number of disperser for each olive grove is random, the long range diffusion process is completely stochastic. Hence, together with single simulations, it is also useful to investigate the average self infected level of olive groves after five years over simulations. 
 
-**$^1$** Note that since the number of disperser for each olive grove is random, the long range diffusion process is completely stochastic.
-
-The following plots shows an example for one simulation of the process in a time space of 5 years.
+The following plots shows an example for one simulation of the process in a time space of 5 years, while the last plot shows the risk map over 100 simulations. All simulations start from a random olive grove in the municipality of Gallipoli. 
 
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_0y.png" width="400" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_1y.png" width="400" height="400" />
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_2y.png" width="400" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_3y.png" width="400" height="400" />
-<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_3y.png" width="400" height="400" /> 
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_4y.png" width="400" height="400" /> 
 
 ## Evolution of SIR model 
 
