@@ -77,7 +77,7 @@ To model the local infection growth of a single olive grove, a discrete variant 
 
 $N_{t+1}(x,y) = K(x,y)(\frac{N_{t}(x,y)}{K(x,y)})^{e^{-A}}$     **(1)**
 
-where $N_0$ = e^{-B}$, $(x,y)$ refers to the target olive grove and $K(x,y) = \Phi(x,y)+a(1-\Phi(x,y))$ is the olive grove infection carrying capacity, where $\Phi(x,y)$ is simply the area of the olive grove, and $a \in [0, 1]$ is the carrying capacity in nonolive grove habitat, relative to that in olive groves. $A$ and $B$ are constants related to the rate of population growth and the initial proportion of plants infected, fixed at $A=3$ and $B=14.069$, as done in **[1]**. 
+where $N_0 = e^{-B}$, $(x,y)$ refers to the target olive grove and $K(x,y) = \Phi(x,y)+a(1-\Phi(x,y))$ is the olive grove infection carrying capacity, where $\Phi(x,y)$ is simply the area of the olive grove, and $a \in [0, 1]$ is the carrying capacity in nonolive grove habitat, relative to that in olive groves. $A$ and $B$ are constants related to the rate of population growth and the initial proportion of plants infected, fixed at $A=3$ and $B=14.069$, as done in **[1]**. 
 Intuitively, according to these equations, starting from a given self level of infection, each year an infected olive grove increases its level of infection $N_{t}$ according to its area, in a resulting value between zero and one. Self level of infection is fundamental for the diffusion of the epidemic to other olive groves, as exposed in the next section. 
 
 ### Dispersal
@@ -90,14 +90,14 @@ The short-distance dispersal is here modelled with a 2D deterministic exponentia
 
 $\hat{k}(x,y) = exp(\frac{-((x-\hat{x})^2+(y-\hat{y})^2)^{1/2}}{\beta})$      **(2)**
 
-In practice, what happens in a simulation scenario is that given an infected olive grove $(\hat{x},\hat{y})$, all olive groves with \hat{k} \geq p$ gets infected. In the work, $p$ is set equal to $0.2$. 
+In practice, what happens in a simulation scenario is that given an infected olive grove $(\hat{x},\hat{y})$, all olive groves with $\hat{k} \geq p$ gets infected. In the work, $p$ is set equal to $0.2$. 
 
 #### Long-range dispersal 
 
-Modelling long-range dispersal is a more difficult challenge, since lots of external factors, such as wind and cars, may contribute to the long-distance diffusion of the epidemic. Here, an isotropic stochastic dispersal is proposed. To each olive grove a weighted probability of generating a random disperser is assigned, given by $\roN_{t}}(x,y)$, where $\ro \in [0,1]$. Hence, groves with a higher level of self infection will have a higher probability of generating a random dispersal. From this, if $\roN_{t}(x,y) \geq q$, a random number of dispersers $M \in {1,...,M_{max}}$ infect $M$ olive groves according to a 2D Gaussian distribution $N(0,d)$. 
-Constants are fixed as $\ro = 1, q = 0.2, M_{max} = 5$ and $d=20km$.
+Modelling long-range dispersal is a more difficult challenge, since lots of external factors, such as wind and cars, may contribute to the long-distance diffusion of the epidemic. Here, an isotropic stochastic dispersal is proposed. To each olive grove a weighted probability of generating a random disperser is assigned, given by $\psi N_{t}(x,y)$, where $\psi \in [0,1]$. Hence, groves with a higher level of self infection will have a higher probability of generating a random dispersal. From this, if $\psi N_{t}(x,y) \geq q$, a random number of dispersers $M \in {1,...,M_{max}}$ infect $M$ olive groves according to a 2D Gaussian distribution $N(0,d)$. 
+Constants are fixed as $\psi = 1, q = 0.2, M_{max} = 5$ and $d=20km$.
 
-To summarize the whole process, at time $t$ all infected olive groves increase their self level of infection according to equation **(1)**, then for each infected olive grove those neighbors in an average distance of $100 m$ are infected according to equation **(2)** and only for those with a self level of infection greater than a threshold $p$, $M$ disperser**$^1$** infect random susceptible olive groves according to the 2D Gaussian distribution. 
+To summarize the whole process, at time $t$ all infected olive groves increase their self level of infection according to equation **(1)**, then for each infected olive grove those neighbors in an average distance of $100 m$ are infected according to equation **(2)** and only for those with a self level of infection greater than a threshold $p$, $M$ disperser$^1$ infect random susceptible olive groves according to the 2D Gaussian distribution. 
 
 **$^1$** Note that since the number of disperser for each olive grove is random, the long range diffusion process is completely stochastic.
 
