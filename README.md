@@ -39,6 +39,7 @@ This first plot shows simply the distribution of the olive groves (green) in Apu
 
 Furthermore, we can show some interesting relations between olive groves and municipalities. 
 In the two following choropleths municipalities are colored according to the number of olive bunches they contain (left) and the density of olive bunches on their territory (right), i.e. $\frac{num.olives}{area}$. 
+
 In the img folder, the file olives_mun.html contains the dynamic version of the second plot, where municipalities are colored according to the density of olive groves and for each municipality it is possible to see the number of the olive groves it contains and its density. 
 
 
@@ -46,9 +47,7 @@ In the img folder, the file olives_mun.html contains the dynamic version of the 
 
 Looking at these two plots, it is immediate to understand, or at least have a confirmation, of why the epidemic of Xylella Fastidiosa spread in the way it had. Of course it is obvious that municipalities with larger area, in a cultural and economic system strongly based on the presence of olive trees, will contain more groves, but when it comes to the density, except for a few municipalities near Bari, the highest levels are in the Salento subregion (southern part of the region, comprehending the province of Lecce and parts of the provinces of Brindisi and Taranto). Linking this information with the fact that the first outbreak of Xylella Fastidiosa was registered in Gallipoli municipality (south of Taranto), it is immediate to understand how easily the epidemic has been able to quickly spread in all the southern part of the region. 
 
-# Network Definition
-
-## Degree 
+## Network Definition
 
 From the geodataframe containing the geometries of different bunches, it is possible to define a network where each node is an olive bunch and two nodes share an edge if the corresponding olive bunches lay at a distance lower than a given threshold. To do so, for each pair of polygons the distance have been calculated considering the nearest points between the two. The two pictures below show an example of this process for the olive bunches in the municipality of Lecce. From a randomly chosen target olive bunch, the first choropleth shows the distance of other bunches in the same municipality colored according to their distance. The .gif map shows instead the neighbors of the target olive bunch for different increasing thresholds in meters. 
 
@@ -57,6 +56,9 @@ From the geodataframe containing the geometries of different bunches, it is poss
 
 This process is performed for every couple of olive bunches in the dataset, assigning to it a distance.  
 From that, an edgelist is defined in the classical "source-target-distance" way.
+
+### Degree 
+
 In the plot below, the histogram for the degree distribution of the network is presented.
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/degree_distribution.png)
@@ -68,7 +70,7 @@ In the following plot, olive bunches are highlighted according to their degree c
 
 The degree of a node could be a useful quantity do determine bunches to vaccinate at priori in order to avoid a massive spread of a disease. There are of course other important quantities, the other one on which we'll focus here is the betweeness centrality of nodes. 
 
-## Betweeness centrality
+### Betweeness centrality
 
 While for degree centrality the procedure was quite fast, the size of the network made it almost impossible to obtain the betweeness centrality of each olive bunch in the geodataframe. From this, the idea was to create a new network where nodes are municipalities of Apulia region and two nodes, intuitively, share a common edge if they share a common border. First, it was needed to determine, given two municipalities, if they actually were neighbors. Below, an example 
 
