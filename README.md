@@ -8,7 +8,7 @@ Understanding the theory behind the diffusion of such a disease may be useful fo
 
 Hence, this project has several goals: The first is to provide a visual descriptive analysis of the distribution of olive groves in Apulia, highlighting differences in density and amount of trees in different part of the regions and exploiting the network analysis framework in order to address different olive groves and parts of the territory with potentially useful metrics; secondly, two different approaches for the simulation of the diffusion of Xylella Fastidiosa are presented, both based on previous works and with strong differences between them, always with a strong focus on visual representation and geospatial plots. Finally, different potential control strategies are considered, with a focus on their feasibility and their actual impact. 
 
-# Introduction (Historical)
+# Introduction
 Xylella fastidiosa is a bacterium that has caused a devastating epidemic in the Apulia region of southern Italy, with significant impacts on the local economy and agricultural sector. Since its first detection in the region in 2013, Xylella fastidiosa has caused extensive damage, leading to the uprooting of millions of trees and threatening the livelihoods of farmers and agricultural communities. 
 
 In order to grasp completely the massive diseases caused by the diffusion of such an epidemic in Apulia, it is necessary to stress that olive farming in the southern province of Puglia accounts for about 40% of Italy’s olive oil production and is of major importance for the regional economy **[11]**. Furthermore, olive trees represent a strong symbol for the identity of the region and its people, with an important aesthetic and touristic value and culturale heritage. Because the landscape is dominated by centennial olive trees and a significant part of the olive crops is associated with family-based agriculture activities, the impact of the epidemic had extreme negative implications not only to olive producers and/or olive industry but has threatened the entire local economy, and the symbolic crop and landscape symbol of this territory. 
@@ -23,22 +23,28 @@ Before to go deeper into the actual work, in order to provide a visual idea of t
 
 # Dataset 
 
-The most important tool that has been exploited in this work is a geodataset with locations of different olive groves, naturally fundamental in order to be able to both perform epidemic scenarios taking into account actual distances between elements and produce visual content as maps for the diffusion. Obatining this dataset was no easy though. The italian portal for the evolution of the Xylella Emergency **[7]** confirms the precesence of such a dataset on the website but actually there is no evidence of such a dataset really existing. Hence, the material was obtained directly by asking to Dr. Giovanni Strona, one of the authors of **[4]**, a paper with a focus similar to the one of this work, which mentioned and exploited the geodataset of the Puglia Portal. Dr. Strona, whom I really have to thank for the kindness and the availability, provided a shapefile with information regarding the position of 61036 olive groves in Apulia. Each row contains an id of the bunch and a geometry consisting in a multipolygon of the interested area. Every analysis which will be presented further is made starting from this geodataset. 
-
+The milestone and first tool that has been exploited in this work is a geodataset with locations of different olive groves, naturally fundamental in order to be able to both perform epidemic scenarios taking into account actual distances between elements and produce visual content as maps for the diffusion. Obatining this dataset was no easy though. The italian portal for the evolution of the Xylella Emergency **[7]** confirms the presence of such a dataset on the website but there is actually no evidence of it really existing. 
+Hence, the material was obtained by asking directly to Dr. Giovanni Strona, one of the authors of **[4]**, a paper where analysis similar to the ones presented in this work are performed, which mentioned and exploited the geodataset of the Puglia Portal. Dr. Strona, whom I really have to thank for the kindness and the availability, provided me with a shapefile with information regarding the position of 61036 olive groves in Apulia. Each row contains an id of the grove and a geometry consisting in a multipolygon of the interested area. Every analysis which will be presented further is made starting from this geodataset. 
+Of course, since we are dealing not with olive trees but with groves, all analysis performed and methods proposed will be inevitabily a little approximate. Nonetheless, also comparing with other works focusing on the same topic, this situation allows to perform a quite realistic and punctual analysis and simulation of the phenomenon. 
 
 # Exploratory Data Analysis
 
-## Map of the olive trees in Apulia 
+The goal of this section is to provide a visual descriptive analysis of the dataset and the distribution of olive groves in Apulia region. Starting from a general view of the distribution of the groves in the region, together with their density inside different provinces and municipalities, we'll then focus on a network view of the dataset, in order to extract more information and look at it under a different lens. 
 
+## Map of the olive groves in Apulia 
+
+This first plot shows simply the distribution of the olive groves (green) in Apulia region. Even if of course this map does not provide any other intrinsic information, I think it is a good starting point also in order to have a clear idea of the magnitude of the phenomenon: the region is widely populated by olive trees in almost every part of it, and so it is immediate to understand how much this epidemic is not a finite and limitated phenomenon, but risks to damage and compromise the whole area of Apulia. 
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/map.png)
 
-Furthermore, we can show some interesting relations between olive bunches and municipalities. In the two following choropleths municipalities are colored according to the number of olive bunches they contain (left) and the density of olive bunches on their territory (right), i.e. $\frac{num.olives}{area}$. 
+Furthermore, we can show some interesting relations between olive groves and municipalities. 
+In the two following choropleths municipalities are colored according to the number of olive bunches they contain (left) and the density of olive bunches on their territory (right), i.e. $\frac{num.olives}{area}$. 
 Below, a dynamic plot for the density of olive trees per municipality.
 
 
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/olive_trees_xmun.png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/olive_trees_xmun_scaled.png" width="500" height="400" />
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/olives_mun.html" width="500" height="400">
+
 
 # Network Definition
 
