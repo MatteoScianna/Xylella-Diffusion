@@ -49,16 +49,16 @@ Looking at these two plots, it is immediate to understand, or at least have a co
 
 ## Network Definition
 
-From the geodataframe containing the geometries of different bunches, it is possible to define a network where each node is an olive bunch and two nodes share an edge if the corresponding olive bunches lay at a distance lower than a given threshold. To do so, for each pair of polygons the distance have been calculated considering the nearest points between the two. The two pictures below show an example of this process for the olive bunches in the municipality of Lecce. From a randomly chosen target olive bunch, the first choropleth shows the distance of other bunches in the same municipality colored according to their distance. The .gif map shows instead the neighbors of the target olive bunch for different increasing thresholds in meters. 
+From the geodataframe containing the geometries of different groves, it is possible to define a network where each node is an olive grove and two nodes share an edge if the corresponding olive grove lay at a distance lower than a given threshold. 
+To do so, for each pair of polygons the distance have been calculated considering the nearest points between the two. The two pictures below show an example of this process for the olive groves in the municipality of Lecce. From a randomly chosen target olive bunch, the first choropleth shows the distance of other bunches in the same municipality colored according to their distance. The .gif map shows instead the neighbors of the target olive bunch for different increasing thresholds in meters. 
 
-![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/lecce_dist.png)
-![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/neighbors.gif)
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/lecce_dist.png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/neighbors.gif" width="500" height="400" />
 
-This process is performed for every couple of olive bunches in the dataset, assigning to it a distance.  
-From that, an edgelist is defined in the classical "source-target-distance" way.
+This process is performed for every couple of olive bunches in the dataset, assigning to it a distance.  From that, an edgelist is defined in the classical "source-target-distance" way and the consequent network is created.
 
 ### Degree 
 
+The degree of a node is defined as the number of edges the node has. In other terms, this quantity refers to the number of other nodes our chosen node is connected to. 
 In the plot below, the histogram for the degree distribution of the network is presented.
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/degree_distribution.png)
@@ -68,7 +68,9 @@ In the following plot, olive bunches are highlighted according to their degree c
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/degree.png)
 
-The degree of a node could be a useful quantity do determine bunches to vaccinate at priori in order to avoid a massive spread of a disease. There are of course other important quantities, the other one on which we'll focus here is the betweeness centrality of nodes. 
+Note how the degree of the groves in the area of Gallipoli (first initial outbreak of the epidemic) is generally quite high. This is another sympthom on why the epidemic was so fast to spread starting from a position with lots of possible susceptible trees to infect.  
+
+The degree of a node could be a useful quantity do determine groves to eradicate at priori in order to avoid a massive spread of a disease. There are of course other important quantities, the other one on which we'll focus here is the betweeness centrality of nodes. 
 
 ### Betweeness centrality
 
