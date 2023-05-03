@@ -3,8 +3,8 @@
 # Abstract
 
 The impact of the diffusion of Xylella Fastidiosa in Italy and, more in general, in Europe, has been under the spotlight of many different works. The diffusion of this bacterium in Apulia has been a strong damage for the region under many different point of view, since olive trees represent a both source of attraction for tourism and a fundamental asset for one of the main economic incomes for the region: the production of olive oil. 
-
-CAMBIA Hence, this project has two main goals: the first one is to provide a visual descriptive analysis of the distribution of olive trees in Apulia; the second is to build different simulation scenarios for the diffusion of Xylella fastidiosa between olive groves, analyze different vaccinations strategies and provide some possible scenarios on how to reduce the impact of a possible epidemic. 
+\\Understanding the theory behind the diffusion of such a disease may be useful for many different purposes: first of all, since the epidemic is still on, a better knowledge of its diffusion process may lead to better containment methods, in order to avoid the disease to infect and destroy trees in such a deliberate and unopposed way as it happened in the first stage of the contagion; furthermore, it is obvious how epidemiology is a topic of current interest during these recent years, and hence the study and the master of such a disease may be very useful for future epidemics and pandemics.
+\\Hence, this project has several goals: The first is to provide a visual descriptive analysis of the distribution of olive groves in Apulia, highlighting differences in density and amount of trees in different part of the regions and exploiting the network analysis framework in order to address different olive groves and parts of the territory with potentially useful metrics; secondly, two different approaches for the simulation of the diffusion of Xylella Fastidiosa are presented, both based on previous works and with strong differences between them, always with a strong focus on visual representation and geospatial plots. Finally, different potential control strategies are considered, with a focus on their feasibility and their actual impact. 
 
 # Introduction (Historical)
 
@@ -143,3 +143,7 @@ This process is shown in the plots below, respectively with a simple scatterplot
 **[7]** http://www.emergenzaxylella.it/portal/portale_gestione_agricoltura
 
 **[8]** Shigesada, Nanako, Kohkichi Kawasaki, and Yasuhiko Takeda. "Modeling stratified diffusion in biological invasions." The American Naturalist 146.2 (1995): 229-251.
+
+**[9]** Kottelenberg, David, et al. "Shape and rate of movement of the invasion front of Xylella fastidiosa spp. pauca in Puglia." Scientific Reports 11.1 (2021): 1061.
+
+**[10]** Saponari, M., et al. "Xylella fastidiosa in olive in Apulia: Where we stand." Phytopathology 109.2 (2019): 175-186.
