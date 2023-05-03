@@ -98,7 +98,7 @@ To model the local infection growth of a single olive grove, a discrete variant 
 
 $N_{t+1}(x,y) = K(x,y)(\frac{N_{t}(x,y)}{K(x,y)})^{e^{-A}}$     **(1)**
 
-where $N_0 = e^{-B}$, $(x,y)$ refers to the target olive grove and $K(x,y) = \Phi(x,y)+a(1-\Phi(x,y))$ is the olive grove infection carrying capacity, where $\Phi(x,y)$ is simply the area of the olive grove, and $a \in [0, 1]$ is the carrying capacity in nonolive grove habitat, relative to that in olive groves. $A$ and $B$ are constants related to the rate of population growth and the initial proportion of plants infected, fixed at $A=3$ and $B=14.069$, as done in **[1]**. 
+where $N_0 = e^{-B}$, $(x,y)$ refers to the target olive grove and $K(x,y) = \Phi(x,y)+a(1-\Phi(x,y))$ is the olive grove infection carrying capacity, where $\Phi(x,y)$ is simply the area of the olive grove divided by the biggest area in the dataset, and $a \in [0, 1]$ is the carrying capacity in nonolive grove habitat, relative to that in olive groves. $A$ and $B$ are constants related to the rate of population growth and the initial proportion of plants infected, fixed at $A=3$ and $B=14.069$, as done in **[1]**. 
 Intuitively, according to these equations, starting from a given self level of infection, each year an infected olive grove increases its level of infection $N_{t}$ according to its area, in a resulting value between zero and one. Self level of infection is fundamental for the diffusion of the epidemic to other olive groves, as exposed in the next section. 
 
 ### Dispersal
