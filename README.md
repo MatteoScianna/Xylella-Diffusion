@@ -52,7 +52,7 @@ Looking at these two plots, it is immediate to understand, or at least have a co
 From the geodataframe containing the geometries of different groves, it is possible to define a network where each node is an olive grove and two nodes share an edge if the corresponding olive grove lay at a distance lower than a given threshold. 
 To do so, for each pair of polygons the distance have been calculated considering the nearest points between the two. The two pictures below show an example of this process for the olive groves in the municipality of Lecce. From a randomly chosen target olive bunch, the first choropleth shows the distance of other bunches in the same municipality colored according to their distance. The .gif map shows instead the neighbors of the target olive bunch for different increasing thresholds in meters. 
 
-<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/lecce_dist.png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/neighbors.gif" width="500" height="400" />
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/lecce_dist.png" width="600" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/neighbors.gif" width="600" height="400" />
 
 This process is performed for every couple of olive bunches in the dataset, assigning to it a distance.  From that, an edgelist is defined in the classical "source-target-distance" way and the consequent network is created.
 
