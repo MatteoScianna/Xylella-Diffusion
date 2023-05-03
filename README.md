@@ -9,9 +9,8 @@ Understanding the theory behind the diffusion of such a disease may be useful fo
 Hence, this project has several goals: The first is to provide a visual descriptive analysis of the distribution of olive groves in Apulia, highlighting differences in density and amount of trees in different part of the regions and exploiting the network analysis framework in order to address different olive groves and parts of the territory with potentially useful metrics; secondly, two different approaches for the simulation of the diffusion of Xylella Fastidiosa are presented, both based on previous works and with strong differences between them, always with a strong focus on visual representation and geospatial plots. Finally, different potential control strategies are considered, with a focus on their feasibility and their actual impact. 
 
 # Introduction (Historical)
+Xylella fastidiosa is a bacterium that has caused a devastating epidemic in the Apulia region of southern Italy, with significant impacts on the local economy and agricultural sector. Since its first detection in the region in 2013, Xylella fastidiosa has caused extensive damage, leading to the uprooting of millions of trees and threatening the livelihoods of farmers and agricultural communities. In order to grasp completely the massive diseases caused by the diffusion of such an epidemic in Apulia, it is necessary to stress that olive farming in the southern province of Puglia accountsfor about 40% of Italy’s olive oil production and is of major importance for the regional economy **[11]**. Furthermore, olive trees represent a strong symbol for the identity of the region and its people, with an important aesthetic and touristic value and culturale heritage **[10]**. Without dwelling too much into phitosanitary and epidemiological details, we refer to **[6]** for an exhaustive discussion of the losses. Olive images blabla
 
-Xylella fastidiosa is a Gram-negative bacterium that infects a broad range of plant species, causing significant economic losses worldwide. In recent years, the bacterium has emerged as a major threat to olive trees in the Apulia region of Italy. Since its first detection in the region in 2013, Xylella fastidiosa has caused extensive damage, leading to the uprooting of millions of trees and threatening the livelihoods of farmers and agricultural communities.
-CONTINUE
 
 # Dataset 
 
@@ -149,3 +148,5 @@ This process is shown in the plots below, respectively with a simple scatterplot
 **[9]** Kottelenberg, David, et al. "Shape and rate of movement of the invasion front of Xylella fastidiosa spp. pauca in Puglia." Scientific Reports 11.1 (2021): 1061.
 
 **[10]** Saponari, M., et al. "Xylella fastidiosa in olive in Apulia: Where we stand." Phytopathology 109.2 (2019): 175-186.
+
+**[11]** "Istituto di Servizi per il Mercato Agricolo Alimentare."
