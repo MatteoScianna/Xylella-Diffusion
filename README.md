@@ -138,7 +138,7 @@ Starting by the assumption that every olive grove found infected is immediately 
 - The proportion of olive groves at distance *n* km from the target olive grove that have been previously found infected(and hence eradicated), called $\beta$;
 - An "attention level" value $\gamma \in [0,1]$, potentially depending by multiple factors. 
 From this, we can define 
-$p_{er}^{t}(x,y) = \alpha_1\cdot$N_{t}(x,y)+\alpha_2\cdot\beta_{t}(x,y)+\alpha_3\cdot\gamma$
+$p_{er}^{t}(x,y) = \alpha_1 \cdotN_{t}(x,y)+\alpha_2\cdot\beta_{t}(x,y)+\alpha_3\cdot\gamma$
 where $\sum_{i=1}^{3} \alpha_i = 1$ and $\alpha_i \in [0,1]$. 
 
 Finally, in order to determine whether a grove found infected will be eradicated, an "avversion" index $\nu \in [0,1]$ is defined. This value represents the effective will on the part of those in charge of eradicating the grove and may depend on social, political and cultural bases, together with availability of tools, period of the year. It may depend also on the position of the grove itself, the aesthetic value of the trees, the stage of infective process the tree is current in, and many other factors. 
