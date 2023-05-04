@@ -135,7 +135,9 @@ The following plots shows an example for one simulation of the process in a time
 ## Network-based simulation model
 
 As already mentioned before, network science framework can be very useful in order to simulate and analyse the diffusion of an epidemic **[12][13]**. In this scenario, it is possible to exploit some well established epidemic diffusion models, such as the SIR and the SI. These models, ruled by sets of differential equations, consider different possible states in which an individual can be during an epidemic and model the evolution of those states up to the end of the outbreak. 
+
 Dr. Strona's et al. paper **[4]**, which we already referred to in the dataset section, explicitely used this framework in order to perform a qualitative analysis for the diffusion of Xylella Fastidiosa in Apulia, a process that we'll replicate now. After all, we already defined a network structure on top of the geodataset in one of the previous sections, in order to grasp some topological insights. Following this already existing network, it is possible to simulate the diffusion of an epidemic and perform an analysis on the same topic but under a different framework. 
+
 An important disclaimer has to be done before to go on. As already stated in **[4]**, the simplicistic diffusion model that will be used does claim to be the most suitable model for Xylella Diffusion. We already defined, in the previous section, a model that tries to resemble as good as possible the real-life scenario, and this of course cannot be the case of an SIR/SI/SIS model. The main goal of this section is to focus of nodes importance, understanding which nodes are more likely to be infected based only on the network topology. 
 
 ### SIS Model 
