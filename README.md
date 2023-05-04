@@ -131,10 +131,24 @@ The following plots shows an example for one simulation of the process in a time
 
 ### Control Strategy
 
+Since its initial outbreak in Europe, many different strategies have been adopted in order to control the diffusion of Xylella Fastidiosa **[14,15]**. Up to now, no insecticide treatments have been proving working good in the removal of the infection from a plant, and so the main tactic adopted in order to face the epidemic diffusion is the eradication of the tree itself, or its roguing. Starting from the control strategy exposed in **[1]**, here a new model for the eradication of infected trees is presented. 
+
+Starting by the assumption that every olive grove found infected is immediately eradicated, at each time step, before the infection process takes place, each already infected olive grove is labeled with an eradication probability $p_{er}$, given by the linear convex combination of three factors that, intuitively, contribute to put a given grove under the spotlight of a possible infection: 
+- The self level of infection of the olive grove itself, already defined as $N_{t}(x,y)$;
+- The proportion of olive groves at distance *n* km from the target olive grove that have been previously found infected(and hence eradicated), called $\beta$;
+- An "attention level" value $\gamma \in [0,1]$, potentially depending by multiple factors. 
+From this, we can define 
+$p_{er}^{t}(x,y) = \alpha_1\cdot$N_{t}(x,y)+\alpha_2\cdot\beta_{t}(x,y)+\alpha_3\cdot\gamma$
+where $\sum_{i=1}^3\alpha_i = 1$ and $\alpha_i \in [0,1]$. 
+
+Finally, in order to determine whether a grove found infected will be eradicated, an "avversion" index $\nu \in [0,1]$ is defined. This value represents the effective will on the part of those in charge of eradicating the grove and may depend on social, political and cultural bases, together with availability of tools, period of the year. It may depend also on the position of the grove itself, the aesthetic value of the trees, the stage of infective process the tree is current in, and many other factors. 
+At the end, if $p_{er}^{t}(x,y) > \nu$, the grove is eradicated and cannot spread the disease anymore.
+
+In the simulations below, $\alpha_i = \frac{1}{3} \forall i$ and three different values of $\nu$ are considered.
 
 ## Network-based simulation model
 
-As already mentioned before, network science framework can be very useful in order to simulate and analyse the diffusion of an epidemic **[12][13]**. In this scenario, it is possible to exploit some well established epidemic diffusion models, such as the SIR and the SI. These models, ruled by sets of differential equations, consider different possible states in which an individual can be during an epidemic and model the evolution of those states up to the end of the outbreak. 
+As already mentioned before, network science framework can be very useful in order to simulate and analyse the diffusion of an epidemic **[12,13]**. In this scenario, it is possible to exploit some well established epidemic diffusion models, such as the SIR and the SI. These models, ruled by sets of differential equations, consider different possible states in which an individual can be during an epidemic and model the evolution of those states up to the end of the outbreak. 
 
 Dr. Strona's et al. paper **[4]**, which we already referred to in the dataset section, explicitely used this framework in order to perform a qualitative analysis for the diffusion of Xylella Fastidiosa in Apulia, a process that we'll replicate now. After all, we already defined a network structure on top of the geodataset in one of the previous sections, in order to grasp some topological insights. Following this already existing network, it is possible to simulate the diffusion of an epidemic and perform an analysis on the same topic but under a different framework. 
 
@@ -175,3 +189,7 @@ An important disclaimer has to be done before to go on. As already stated in **[
 **[12]** Newman, Mark. Networks. Oxford university press, 2018.
 
 **[13]** Keeling, Matt J., and Ken TD Eames. "Networks and epidemic models." Journal of the royal society interface 2.4 (2005): 295-307.
+
+**[14]** Quetglas, Bàrbara, et al. "Evaluation of Control Strategies for Xylella fastidiosa in the Balearic Islands." Microorganisms 10.12 (2022): 2393.
+
+**[15]** Almeida, Rodrigo PP, et al. "Vector transmission of Xylella fastidiosa: applying fundamental knowledge to generate disease management strategies." Annals of the Entomological Society of America 98.6 (2005): 775-786.
