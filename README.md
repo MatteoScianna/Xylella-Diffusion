@@ -129,20 +129,20 @@ The following plots shows an example for one simulation of the process in a time
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_2y.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_3y.png" width="400" height="500" />
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_4y.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_averaged_5years.png" width="600" height="600" />
 
-## Evolution of SIR model 
+### Control Strategy
 
-Now it is time to simulate the possible spread of an epidemic. In this first scenario, a classical SIR model has been chosen, with not a priori vaccination. At each step of the process, a choropleth is procuced highlighting susceptible, infected, and removed nodes. At the end of the project, all these frames are put together in the .gif file you can see below.  
 
-![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/spread1.gif)
+## Network-based simulation model
 
-# Vaccination Strategies
+As already mentioned before, network science framework can be very useful in order to simulate and analyse the diffusion of an epidemic **[12][13]**. In this scenario, it is possible to exploit some well established epidemic diffusion models, such as the SIR and the SI. These models, ruled by sets of differential equations, consider different possible states in which an individual can be during an epidemic and model the evolution of those states up to the end of the outbreak. 
+Dr. Strona's et al. paper **[4]**, which we already referred to in the dataset section, explicitely used this framework in order to perform a qualitative analysis for the diffusion of Xylella Fastidiosa in Apulia, a process that we'll replicate now. After all, we already defined a network structure on top of the geodataset in one of the previous sections, in order to grasp some topological insights. Following this already existing network, it is possible to simulate the diffusion of an epidemic and perform an analysis on the same topic but under a different framework. 
+An important disclaimer has to be done before to go on. As already stated in **[4]**, the simplicistic diffusion model that will be used does claim to be the most suitable model for Xylella Diffusion. We already defined, in the previous section, a model that tries to resemble as good as possible the real-life scenario, and this of course cannot be the case of an SIR/SI/SIS model. The main goal of this section is to focus of nodes importance, understanding which nodes are more likely to be infected based only on the network topology. 
 
-## Degree-based Vaccination
-One possible way to vaccinate nodes is according to their degree. In particular, we start removing from the graph nodes with higher degree and we go on until all nodes are removed. We are interested in the evolution of the size of the giant component of the graph according to different percentages of nodes removed in this way. 
-This process is shown in the plots below, respectively with a simple scatterplot and with a map, where nodes in red are the ones belonging to the giant component. 
-<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/evolution_S_degree.png" width="500" height="400" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/biggest_comp.gif" width="500" height="400">
+### SIS Model 
 
-# Simulations and Results
+### Simulation 
+
+### Control Strategies
 
 # Conclusion and Further Works
 
@@ -169,3 +169,7 @@ This process is shown in the plots below, respectively with a simple scatterplot
 **[10]** Saponari, M., et al. "Xylella fastidiosa in olive in Apulia: Where we stand." Phytopathology 109.2 (2019): 175-186.
 
 **[11]** "Istituto di Servizi per il Mercato Agricolo Alimentare."
+
+**[12]** Newman, Mark. Networks. Oxford university press, 2018.
+
+**[13]** Keeling, Matt J., and Ken TD Eames. "Networks and epidemic models." Journal of the royal society interface 2.4 (2005): 295-307.
