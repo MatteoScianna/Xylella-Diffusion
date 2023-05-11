@@ -2,13 +2,21 @@
 
 # Abstract
 
+*"Cit iniziale"*$^1$
+
 The impact of the diffusion of Xylella Fastidiosa in Italy and, more in general, in Europe, has been under the spotlight of many different works. The diffusion of this bacterium in Apulia has been a strong damage for the region under many different point of view, since olive trees represent a both source of attraction for tourism and a fundamental asset for one of the main economic incomes for the region: the production of olive oil. 
 
 Understanding the theory behind the diffusion of such a disease may be useful for many different purposes: first of all, since the epidemic is still on, a better knowledge of its diffusion process may lead to better containment methods, in order to avoid the disease to infect and destroy trees in such a deliberate and unopposed way as it happened in the first stage of the contagion; furthermore, it is obvious how epidemiology is a topic of current interest during these recent years, and hence the study and the master of such a disease may be very useful for future epidemics and pandemics.
 
 Hence, this project has several goals: The first is to provide a visual descriptive analysis of the distribution of olive groves in Apulia, highlighting differences in density and amount of trees in different part of the regions and exploiting the network analysis framework in order to address different olive groves and parts of the territory with potentially useful metrics; secondly, two different approaches for the simulation of the diffusion of Xylella Fastidiosa are presented, both based on previous works and with strong differences between them, always with a strong focus on visual representation and geospatial plots. Finally, different potential control strategies are considered, with a focus on their feasibility and their actual impact. 
 
+
+$^1$ This citation, together with all the other ones at the beginning of each section of this work, comes from the book *"Il Fuoco Invisibile - Storia umana di un disastro naturale"* by Daniele Rielli.
+
 # Introduction
+
+*[..]arriviamo al cospetto di un albero di ulivo enorme e maestoso[..]:è il gigante di Alliste. << Ha millecinquecento anni >> dice Enzo, poi indica alcuni rami che presentano delle bruscature. Sono i sintomi della Xylella.**
+
 Xylella fastidiosa is a bacterium that has caused a devastating epidemic in the Apulia region of southern Italy, with significant impacts on the local economy and agricultural sector. Since its first detection in the region in 2013, Xylella fastidiosa has caused extensive damage, leading to the uprooting of millions of trees and threatening the livelihoods of farmers and agricultural communities. 
 
 In order to grasp completely the massive diseases caused by the diffusion of such an epidemic in Apulia, it is necessary to stress that olive farming in the southern province of Puglia accounts for about 40% of Italy’s olive oil production and is of major importance for the regional economy **[11]**. Furthermore, olive trees represent a strong symbol for the identity of the region and its people, with an important aesthetic and touristic value and culturale heritage. Because the landscape is dominated by centennial olive trees and a significant part of the olive crops is associated with family-based agriculture activities, the impact of the epidemic had extreme negative implications not only to olive producers and/or olive industry but has threatened the entire local economy, and the symbolic crop and landscape symbol of this territory. 
@@ -28,6 +36,8 @@ Hence, the material was obtained by asking directly to Dr. Giovanni Strona, one 
 Of course, since we are dealing not with olive trees but with groves, all analysis performed and methods proposed will be inevitabily a little approximate. Nonetheless, also comparing with other works focusing on the same topic, this situation allows to perform a quite realistic and punctual analysis and simulation of the phenomenon. 
 
 # Exploratory Data Analysis
+
+*<<In Salento ci sono novantaseimila ettari di ulivi, li vogliono irrorare tutti.* Comu cazzu faci? >>
 
 The goal of this section is to provide a visual descriptive analysis of the dataset and the distribution of olive groves in Apulia region. Starting from a general view of the distribution of the groves in the region, together with their density inside different provinces and municipalities, we'll then focus on a network view of the dataset, in order to extract more information and look at it under a different lens. 
 
@@ -86,6 +96,10 @@ Having sharply reduced the number of nodes in the network, it is way more agile 
 
 # Models for Epidemic Diffusion
 
+*L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta << a bordo >> la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate $^1$*
+ 
+*$^1$ A questo proposito Daniele Cornara  mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute*
+  
 As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty. Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, two main frameworks are presented. 
 
 ##  Spatially-Explicit Simulation Model
