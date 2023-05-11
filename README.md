@@ -85,8 +85,9 @@ The degree of a node could be a useful quantity do determine groves to eradicate
 
 ### Betweeness centrality
 
-The betweeness centrality of a node can be defined as the  the extent to which a certain vertex lies on the shortest paths between other vertices. More technically, given a node $x$, it is defined as $b(x) = \sum_{s\neq t \neq x}\frac{\sigma_{s,t}(x)}{\sigma_{s,t}}, where
+The betweeness centrality of a node can be defined as the  the extent to which a certain vertex lies on the shortest paths between other vertices. More technically, given a node $x$, it is defined as $b(x) = \sum_{s\neq t \neq x}\frac{\sigma_{s,t}(x)}{\sigma_{s,t}}$, where
 $\sigma_{s,t}$ is the total number of shortest paths from node $s$ to node $t$ and $\sigma_{st}(x)$ is the number of those paths that pass through $x$ (not where $x$ is an end point).
+
 While for degree centrality the procedure was quite fast, the size of the network made it almost impossible to obtain the betweeness centrality of each olive bunch in the geodataframe. From this, the idea was to create a new network where nodes are municipalities of Apulia region and two nodes, intuitively, share a common edge if they share a common border. First, it was needed to determine, given two municipalities, if they actually were neighbors. Below, an example 
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/intersection_ex.png)
