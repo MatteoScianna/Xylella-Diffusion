@@ -15,7 +15,7 @@ $^1$ This citation, together with all the other ones at the beginning of each se
 
 # Introduction
 
-*[..]arriviamo al cospetto di un albero di ulivo enorme e maestoso[..]:è il gigante di Alliste. ‹‹Ha millecinquecento anni dice›› Enzo, poi indica alcuni rami che presentano delle bruscature. Sono i sintomi della Xylella.*
+*[..]arriviamo al cospetto di un albero di ulivo enorme e maestoso[..]:è il gigante di Alliste. ‹‹Ha millecinquecento anni›› dice Enzo, poi indica alcuni rami che presentano delle bruscature. Sono i sintomi della Xylella.*
 
 Xylella fastidiosa is a bacterium that has caused a devastating epidemic in the Apulia region of southern Italy, with significant impacts on the local economy and agricultural sector. Since its first detection in the region in 2013, Xylella fastidiosa has caused extensive damage, leading to the uprooting of millions of trees and threatening the livelihoods of farmers and agricultural communities. 
 
