@@ -146,7 +146,11 @@ where $\alpha_1+\alpha_2+\alpha_3= 1$ and $\alpha_i \in [0,1] \forall i$.
 Finally, in order to determine whether a grove found infected will be eradicated, an "avversion" index $\nu \in [0,1]$ is defined. This value represents the effective will on the part of those in charge of eradicating the grove and may depend on social, political and cultural bases, together with availability of tools, period of the year. It may depend also on the position of the grove itself, the aesthetic value of the trees, the stage of infective process the tree is current in, and many other factors. 
 At the end, if $p_{er}^{t}(x,y) > \nu$, the grove is eradicated and cannot spread the disease anymore.
 
-In the simulations below, $\alpha_i = \frac{1}{3} \forall i$ and three different values of $\nu$ are considered.
+In the simulations below, $\alpha_i = \frac{1}{3} \forall i$ and different values of $\nu$ are considered.
+
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.1.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.5.png" width="600" height="600" />
+
+
 
 ## Network-based simulation model
 
