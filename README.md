@@ -148,7 +148,7 @@ At the end, if $p_{er}^{t}(x,y) > \nu$, the grove is eradicated and cannot sprea
 
 In the simulations below, $\alpha_i = \frac{1}{3} \forall i$ and different values of $\nu$ are considered.
 
-<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.1.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.5.png" width="600" height="600" />
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.1.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.5.png" width="400" height="500" />
 
 
 
