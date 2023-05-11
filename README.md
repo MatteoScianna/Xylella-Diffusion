@@ -97,8 +97,7 @@ Having sharply reduced the number of nodes in the network, it is way more agile 
 
 # Models for Epidemic Diffusion
 
-*L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta ‹‹a bordo›› la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate* $^1$. 
-$^1$ *A questo proposito Daniele Cornara mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute*
+*L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta ‹‹a bordo›› la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate. A questo proposito Daniele Cornara mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute*
   
 As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty. Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, two main frameworks are presented. 
 
