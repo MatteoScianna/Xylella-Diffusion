@@ -2,7 +2,7 @@
 
 # Abstract
 
-     *"Cit iniziale"*$^1$
+*"Cit iniziale"*$^1$
 
 The impact of the diffusion of Xylella Fastidiosa in Italy and, more in general, in Europe, has been under the spotlight of many different works. The diffusion of this bacterium in Apulia has been a strong damage for the region under many different point of view, since olive trees represent a both source of attraction for tourism and a fundamental asset for one of the main economic incomes for the region: the production of olive oil. 
 
@@ -15,7 +15,7 @@ $^1$ This citation, together with all the other ones at the beginning of each se
 
 # Introduction
 
-     *[..]arriviamo al cospetto di un albero di ulivo enorme e maestoso[..]:è il gigante di Alliste. ‹‹Ha millecinquecento anni›› dice Enzo, poi indica alcuni rami che presentano delle bruscature. Sono i sintomi della Xylella.*
+*[..]arriviamo al cospetto di un albero di ulivo enorme e maestoso[..]:è il gigante di Alliste. ‹‹Ha millecinquecento anni›› dice Enzo, poi indica alcuni rami che presentano delle bruscature. Sono i sintomi della Xylella.*
 
 Xylella fastidiosa is a bacterium that has caused a devastating epidemic in the Apulia region of southern Italy, with significant impacts on the local economy and agricultural sector. Since its first detection in the region in 2013, Xylella fastidiosa has caused extensive damage, leading to the uprooting of millions of trees and threatening the livelihoods of farmers and agricultural communities. 
 
@@ -37,7 +37,7 @@ Of course, since we are dealing not with olive trees but with groves, all analys
 
 # Exploratory Data Analysis
 
-     *‹‹In Salento ci sono novantaseimila ettari di ulivi, li vogliono irrorare tutti.* Comu cazzu faci?››
+*‹‹In Salento ci sono novantaseimila ettari di ulivi, li vogliono irrorare tutti.* Comu cazzu faci?››
 
 The goal of this section is to provide a visual descriptive analysis of the dataset and the distribution of olive groves in Apulia region. Starting from a general view of the distribution of the groves in the region, together with their density inside different provinces and municipalities, we'll then focus on a network view of the dataset, in order to extract more information and look at it under a different lens. 
 
@@ -96,9 +96,9 @@ Having sharply reduced the number of nodes in the network, it is way more agile 
 
 # Models for Epidemic Diffusion
 
-     *L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta ‹‹a bordo›› la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate $^1$*
+*L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta ‹‹a bordo›› la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate $^1$*
  
-*$^1$ A questo proposito Daniele Cornara mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute*
+$^1$ *A questo proposito Daniele Cornara mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute*
   
 As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty. Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, two main frameworks are presented. 
 
