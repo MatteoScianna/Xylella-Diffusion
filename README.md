@@ -31,7 +31,7 @@ Before to go deeper into the actual work, in order to provide a visual idea of t
 
 # Dataset 
 
-The milestone and first tool that has been exploited in this work is a geodataset with locations of different olive groves, naturally fundamental in order to be able to both perform epidemic scenarios taking into account actual distances between elements and produce visual content as maps for the diffusion. Obatining this dataset was no easy though. The italian portal for the evolution of the Xylella Emergency **[7]** confirms the presence of such a dataset on the website but there is actually no evidence of it really existing. 
+The milestone and first tool that has been exploited in this work is a geodataset with locations of different olive groves, naturally essential in order to be able to both perform epidemic scenarios taking into account actual distances between elements and produce visual content as maps for the diffusion. Obatining this dataset was no easy though. The italian portal for the evolution of the Xylella Emergency **[7]** confirms the presence of such a dataset on the website but there is actually no evidence of it really existing. 
 Hence, the material was obtained by asking directly to Dr. Giovanni Strona, one of the authors of **[4]**, a paper where analysis similar to the ones presented in this work are performed, which mentioned and exploited the geodataset of the Puglia Portal. Dr. Strona, whom I really have to thank for the kindness and the availability, provided me with a shapefile with information regarding the position of 61036 olive groves in Apulia. Each row contains an id of the grove and a geometry consisting in a multipolygon of the interested area. Every analysis which will be presented further is made starting from this geodataset. 
 Of course, since we are dealing not with olive trees but with groves, all analysis performed and methods proposed will be inevitabily a little approximate. Nonetheless, also comparing with other works focusing on the same topic, this situation allows to perform a quite realistic and punctual analysis and simulation of the phenomenon. 
 
@@ -85,6 +85,8 @@ The degree of a node could be a useful quantity do determine groves to eradicate
 
 ### Betweeness centrality
 
+The betweeness centrality of a node can be defined as the  the extent to which a certain vertex lies on the shortest paths between other vertices. More technically, given a node $x$, it is defined as $b(x) = \sum_{s\neq t \neq x}\frac{\sigma_{s,t}(x)}{\sigma_{s,t}}, where
+$\sigma_{s,t}$ is the total number of shortest paths from node $s$ to node $t$ and $\sigma_{st}(x)$ is the number of those paths that pass through $x$ (not where $x$ is an end point).
 While for degree centrality the procedure was quite fast, the size of the network made it almost impossible to obtain the betweeness centrality of each olive bunch in the geodataframe. From this, the idea was to create a new network where nodes are municipalities of Apulia region and two nodes, intuitively, share a common edge if they share a common border. First, it was needed to determine, given two municipalities, if they actually were neighbors. Below, an example 
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/intersection_ex.png)
