@@ -174,7 +174,10 @@ As already mentioned before, network science framework can be very useful in ord
 
 Dr. Strona's et al. paper **[4]**, which we already referred to in the dataset section, explicitely used this framework in order to perform a qualitative analysis for the diffusion of Xylella Fastidiosa in Apulia. We'll not replicate this process here, since we already have a potentially well established diffusion model. Nonetheless, we'll exploit the network structure of the geodataset in order to grasp some topological insights on which we'll base this control strategy. In particular, we'll refer to the already mentioned and defined measure of betweennes centrality. 
 
-As already mentioned before, the calculation of betweennes centrality for the whole network lead to some problems related to computational cost. Reducing the focus on the only province of Lecce (the only one affected during our simulations), it was actually manageable to calculate this index for each olive grove. We'll refer to the betweenness centrality value of the grove (x,y) as $\xi(x,y)$. 
+As already mentioned before, the calculation of betweennes centrality for the whole network lead to some problems related to computational cost. Reducing the focus on the only province of Lecce (the only one affected during our simulations), it was actually manageable to calculate this index for each olive grove. The following plot shows all the olive groves in the province of Lecce colored according to their betweenness centrality. 
+
+
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/betw_lecce.png" width="400" height="500">
 
 From this, the control strategy proposed works in this way: an eradication radius $er$ and a maximum eradication index $\mu$ are defined. At each step of the diffusion process, for each infected grove all its susceptible neighbors with a distance lower than $er$ between the infected grove are considered. Then, an integer $\hat{\mu}$ between 1 and $\mu$ is randomly extracted. Finally, the $\hat{\mu}$ neighbors of the target infected grove with highest betweenness centrality are selected and eradicated.  
 
