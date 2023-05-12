@@ -102,11 +102,12 @@ Having sharply reduced the number of nodes in the network, it is way more agile 
 
 *L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta ‹‹a bordo›› la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate. A questo proposito Daniele Cornara mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute*
   
-As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty.ALLUNA Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, a variation of the already existing framework presented in **[1]** is presented. 
+As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty. Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, a variation of the already existing framework presented in **[1]** is presented. 
 
 ##  Spatially-Explicit Simulation Model
 
-As already said, this model follows the already existing work presented in **[1]**. ALLUNGA. There is with one substantial differenct: while in the cited paper the main unit of work were grid cells of 1 $km^2$ in which the targed region was divided, here we refer directly to the actual olive groves to perform the simulation. Hence, the evolution of the epidemic diffusion, on a yearly temporal scale, is divided into three different phases.
+As already said, this model follows the already existing work presented in **[1]**. In order to give a brief overview of the model, the model runs at a yearly temporal scale to correspond with the seasonality of the vector which only feeds on olive trees in the summer months when host grasses dry-out **[17]**. This model spread has two main phases:  local infection growth within a olive grove (i.e. progression of disease within the grove as a fraction of trees infected); and dispersal between groves.  Before to go into all the details, there is with one substantial difference with respect to the original paper that needs to be cited: while in the referred paper the main unit of work were grid cells of 1 $km^2$ in which the targed region was divided, here we refer directly to the actual olive groves to perform the simulation. 
+Next, the main phases of the evolution of the process are presented.
 
 ### Self level of infection 
 
@@ -149,7 +150,7 @@ The following plots shows an example for one simulation of the process in a time
 
 Since its initial outbreak in Europe, many different strategies have been adopted in order to control the diffusion of Xylella Fastidiosa **[14,15]**. Up to now, no insecticide treatments have been proving working good in the removal of the infection from a plant, and so the main tactic adopted in order to face the epidemic diffusion is the eradication of the tree itself, or its roguing. Starting from the control strategy exposed in **[1]**, here three different new model for the eradication of infected trees is presented. 
 
-## Control Strategy 1
+## Control Strategy 1 - Multiple factor based infected groves eradication
 
 Starting by the assumption that every olive grove found infected is immediately eradicated, at each time step, before the infection process takes place, each already infected olive grove is labeled with an eradication probability $p_{er}$, given by the linear convex combination of three factors that, intuitively, contribute to put a given grove under the spotlight of a possible infection: 
 - The self level of infection of the olive grove itself, already defined as $N_{t}(x,y)$;
@@ -168,7 +169,7 @@ In the simulations below, $\alpha_i = \frac{1}{3} \forall i$ and different value
 
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.1.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.5.png" width="400" height="500" />
 
-## Control Strategy 2 - Betweenness Centrality
+## Control Strategy 2 - Betweenness Centrality based susceptible groves eradication
 
 As already mentioned before, network science framework can be very useful in order to simulate and analyse the diffusion of an epidemic **[12,13]**. In this scenario, it is possible to exploit some well established epidemic diffusion models, such as the SIR, SI and SIS. These models, ruled by sets of differential equations, consider different possible states in which an individual can be during an epidemic and model the evolution of those states up to the end of the outbreak. 
 
@@ -226,3 +227,5 @@ The ratio behind this process is to prevent the spreading of the disease through
 **[15]** Almeida, Rodrigo PP, et al. "Vector transmission of Xylella fastidiosa: applying fundamental knowledge to generate disease management strategies." Annals of the Entomological Society of America 98.6 (2005): 775-786.
 
 **[16]** Rielli, Daniele. Il Fuoco Invisibile - Storia umana di un disastro naturale. Rizzoli, 2023.
+
+**[17]** EFSA Panel on Plant Health (PLH). "Scientific opinion on the risks to plant health posed by Xylella fastidiosa in the EU territory, with the identification and evaluation of risk reduction options." Efsa Journal 13.1 (2015): 3989.
