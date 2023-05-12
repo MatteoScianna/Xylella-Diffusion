@@ -150,7 +150,7 @@ The following plots shows an example for one simulation of the process in a time
 
 Since its initial outbreak in Europe, many different strategies have been adopted in order to control the diffusion of Xylella Fastidiosa **[14,15]**. Up to now, no insecticide treatments have been proving working good in the removal of the infection from a plant, and so the main tactic adopted in order to face the epidemic diffusion is the eradication of the tree itself, or its roguing. Starting from the control strategy exposed in **[1]**, here three different new model for the eradication of infected trees is presented. 
 
-## Control Strategy 1 - Multiple factor based infected groves eradication
+## Control Strategy 1 - Multiple Factors based Infected Groves Eradication
 
 Starting by the assumption that every olive grove found infected is immediately eradicated, at each time step, before the infection process takes place, each already infected olive grove is labeled with an eradication probability $p_{er}$, given by the linear convex combination of three factors that, intuitively, contribute to put a given grove under the spotlight of a possible infection: 
 - The self level of infection of the olive grove itself, already defined as $N_{t}(x,y)$;
@@ -169,13 +169,13 @@ In the simulations below, $\alpha_i = \frac{1}{3} \forall i$ and different value
 
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.1.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.5.png" width="400" height="500" />
 
-## Control Strategy 2 - Betweenness Centrality based susceptible groves eradication
+## Control Strategy 2 - Betweenness Centrality based Susceptible Groves Eradication
 
 As already mentioned before, network science framework can be very useful in order to simulate and analyse the diffusion of an epidemic **[12,13]**. In this scenario, it is possible to exploit some well established epidemic diffusion models, such as the SIR, SI and SIS. These models, ruled by sets of differential equations, consider different possible states in which an individual can be during an epidemic and model the evolution of those states up to the end of the outbreak. 
 
 Dr. Strona's et al. paper **[4]**, which we already referred to in the dataset section, explicitely used this framework in order to perform a qualitative analysis for the diffusion of Xylella Fastidiosa in Apulia. We'll not replicate this process here, since we already have a potentially well established diffusion model. Nonetheless, we'll exploit the network structure of the geodataset in order to grasp some topological insights on which we'll base this control strategy. In particular, we'll refer to the already mentioned and defined measure of betweennes centrality. 
 
-As already mentioned before, the calculation of betweennes centrality for the whole network lead to some problems related to computational cost. Reducing the focus on the only province of Lecce (the only one affected during our simulations), it was actually manageable to calculate this index for each olive grove. The following plot shows all the olive groves in the province of Lecce colored according to their betweenness centrality. 
+As previously stated, the calculation of betweennes centrality for the whole network lead to some problems related to computational cost. Reducing the focus on the only province of Lecce (the only one affected during our simulations), it was actually manageable to calculate this index for each olive grove. The following plot shows all the olive groves in the province of Lecce colored according to their betweenness centrality. 
 
 
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/betw_lecce.png" width="400" height="500">
@@ -226,6 +226,6 @@ The ratio behind this process is to prevent the spreading of the disease through
 
 **[15]** Almeida, Rodrigo PP, et al. "Vector transmission of Xylella fastidiosa: applying fundamental knowledge to generate disease management strategies." Annals of the Entomological Society of America 98.6 (2005): 775-786.
 
-**[16]** Rielli, Daniele. Il Fuoco Invisibile - Storia umana di un disastro naturale. Rizzoli, 2023.
+**[16]** Rielli, Daniele. "Il Fuoco Invisibile - Storia umana di un disastro naturale". Rizzoli, 2023.
 
 **[17]** EFSA Panel on Plant Health (PLH). "Scientific opinion on the risks to plant health posed by Xylella fastidiosa in the EU territory, with the identification and evaluation of risk reduction options." Efsa Journal 13.1 (2015): 3989.
