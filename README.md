@@ -98,15 +98,15 @@ Having sharply reduced the number of nodes in the network, it is way more agile 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/betweenness_centrality_munic.png)
 
 
-# Models for Epidemic Diffusion
+# Model for Epidemic Diffusion
 
 *L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta ‹‹a bordo›› la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate. A questo proposito Daniele Cornara mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute*
   
-As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty. Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, two main frameworks are presented. 
+As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty.ALLUNA Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, a variation of the already existing framework presented in **[1]** is presented. 
 
 ##  Spatially-Explicit Simulation Model
 
-This model follows the already existing work presented in **[1]** with one substantial differenct: while in the cited paper the main unit of work were grid cells of 1 $km^2$ in which the targed region was divided, here we refer directly to the actual olive groves to perform the simulation. Hence, the evolution of the epidemic diffusion, on a yearly temporal scale, is divided into three different phases.
+As already said, this model follows the already existing work presented in **[1]**. ALLUNGA. There is with one substantial differenct: while in the cited paper the main unit of work were grid cells of 1 $km^2$ in which the targed region was divided, here we refer directly to the actual olive groves to perform the simulation. Hence, the evolution of the epidemic diffusion, on a yearly temporal scale, is divided into three different phases.
 
 ### Self level of infection 
 
@@ -145,9 +145,11 @@ The following plots shows an example for one simulation of the process in a time
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_2y.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_3y.png" width="400" height="500" />
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_4y.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_averaged_5years.png" width="600" height="600" />
 
-### Control Strategy
+# Control Strategies
 
-Since its initial outbreak in Europe, many different strategies have been adopted in order to control the diffusion of Xylella Fastidiosa **[14,15]**. Up to now, no insecticide treatments have been proving working good in the removal of the infection from a plant, and so the main tactic adopted in order to face the epidemic diffusion is the eradication of the tree itself, or its roguing. Starting from the control strategy exposed in **[1]**, here a new model for the eradication of infected trees is presented. 
+Since its initial outbreak in Europe, many different strategies have been adopted in order to control the diffusion of Xylella Fastidiosa **[14,15]**. Up to now, no insecticide treatments have been proving working good in the removal of the infection from a plant, and so the main tactic adopted in order to face the epidemic diffusion is the eradication of the tree itself, or its roguing. Starting from the control strategy exposed in **[1]**, here three different new model for the eradication of infected trees is presented. 
+
+## Control Strategy 1
 
 Starting by the assumption that every olive grove found infected is immediately eradicated, at each time step, before the infection process takes place, each already infected olive grove is labeled with an eradication probability $p_{er}$, given by the linear convex combination of three factors that, intuitively, contribute to put a given grove under the spotlight of a possible infection: 
 - The self level of infection of the olive grove itself, already defined as $N_{t}(x,y)$;
@@ -166,21 +168,25 @@ In the simulations below, $\alpha_i = \frac{1}{3} \forall i$ and different value
 
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.1.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_0.5.png" width="400" height="500" />
 
+## Control Strategy 2 - Betweenness Centrality
+
+As already mentioned before, network science framework can be very useful in order to simulate and analyse the diffusion of an epidemic **[12,13]**. In this scenario, it is possible to exploit some well established epidemic diffusion models, such as the SIR, SI and SIS. These models, ruled by sets of differential equations, consider different possible states in which an individual can be during an epidemic and model the evolution of those states up to the end of the outbreak. 
+
+Dr. Strona's et al. paper **[4]**, which we already referred to in the dataset section, explicitely used this framework in order to perform a qualitative analysis for the diffusion of Xylella Fastidiosa in Apulia. We'll not replicate this process here, since we already have a potentially well established diffusion model. Nonetheless, we'll exploit the network structure of the geodataset in order to grasp some topological insights on which we'll base this control strategy. In particular, we'll refer to the already mentioned and defined measure of betweennes centrality. 
+
+As already mentioned before, the calculation of betweennes centrality for the whole network lead to some problems related to computational cost. Reducing the focus on the only province of Lecce (the only one affected during our simulations), it was actually manageable to calculate this index for each olive grove. We'll refer to the betweenness centrality value of the grove (x,y) as $\xi(x,y)$. 
+
+From this, the control strategy proposed works in this way: an eradication radius $er$ and a maximum eradication index $\mu$ are defined. At each step of the diffusion process, for each infected grove all its susceptible neighbors with a distance lower than $er$ between the infected grove are considered. Then, an integer $\hat{\mu}$ between 1 and $\mu$ is randomly extracted. Finally, the $\hat{\mu}$ neighbors of the target infected grove with highest betweenness centrality are selected and eradicated.  
+
+The ratio behind this process is to prevent the spreading of the disease through the nodes that may lead to a bigger diffusion of the epidemic, defined as the ones with highest betweennes centrality. Below, an example with $er = 2km$ and $\mu = 5$. 
+
+<img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_5years_vax_betw.png" width="400" height="500">
+
+## Comparison 
 
 
-## Network-based simulation model
 
-As already mentioned before, network science framework can be very useful in order to simulate and analyse the diffusion of an epidemic **[12,13]**. In this scenario, it is possible to exploit some well established epidemic diffusion models, such as the SIR and the SI. These models, ruled by sets of differential equations, consider different possible states in which an individual can be during an epidemic and model the evolution of those states up to the end of the outbreak. 
 
-Dr. Strona's et al. paper **[4]**, which we already referred to in the dataset section, explicitely used this framework in order to perform a qualitative analysis for the diffusion of Xylella Fastidiosa in Apulia, a process that we'll replicate now. After all, we already defined a network structure on top of the geodataset in one of the previous sections, in order to grasp some topological insights. Following this already existing network, it is possible to simulate the diffusion of an epidemic and perform an analysis on the same topic but under a different framework. 
-
-An important disclaimer has to be done before to go on. As already stated in **[4]**, the simplicistic diffusion model that will be used does claim to be the most suitable model for Xylella Diffusion. We already defined, in the previous section, a model that tries to resemble as good as possible the real-life scenario, and this of course cannot be the case of an SIR/SI/SIS model. The main goal of this section is to focus of nodes importance, understanding which nodes are more likely to be infected based only on the network topology. 
-
-### SIS Model 
-
-### Simulation 
-
-### Control Strategies
 
 # Conclusion and Further Works
 
