@@ -194,6 +194,9 @@ The ratio behind this process is to prevent the spreading of the disease through
 
 # Conclusion and Further Works
 
+The goal of this project is to try to understand the enormous problem derived from the spread of Xylella fastidiosa in Apulia. After a general introduction of the problem and an overview of the olive groves issue in the region, it has been tried to obtain a mathematical model for the diffusion of the disease, together with some possible control measures in order to avoid the epidemic to spread. Of course there are potentially plenty of integrations needed for this work. First of all, one important limitation was not to have at disposal a dataset with the olive groves effectively infected during the diffusion period: this would be very useful in order to have a comparison with the results of the model to see if it is actually suitable and at which level. 
+
+
 # References
 
 **[1]** White, Steven M., et al. "Modelling the spread and control of Xylella fastidiosa in the early stages of invasion in Apulia, Italy." Biological Invasions 19 (2017): 1825-1837
