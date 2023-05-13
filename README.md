@@ -15,7 +15,7 @@ $^1$ This citation, together with all the other ones at the beginning of each se
 
 # Introduction
 
-*[..]arriviamo al cospetto di un albero di ulivo enorme e maestoso[..]:è il gigante di Alliste. ‹‹Ha millecinquecento anni›› dice Enzo, poi indica alcuni rami che presentano delle bruscature. Sono i sintomi della Xylella.*
+*"[..]arriviamo al cospetto di un albero di ulivo enorme e maestoso[..]:è il gigante di Alliste. ‹‹Ha millecinquecento anni›› dice Enzo, poi indica alcuni rami che presentano delle bruscature. Sono i sintomi della Xylella."*
 
 Xylella fastidiosa is a bacterium that has caused a devastating epidemic in the Apulia region of southern Italy, with significant impacts on the local economy and agricultural sector. Since its first detection in the region in 2013, Xylella fastidiosa has caused extensive damage, leading to the uprooting of millions of trees and threatening the livelihoods of farmers and agricultural communities. 
 
@@ -30,6 +30,9 @@ Before to go deeper into the actual work, in order to provide a visual idea of t
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/Ulivo_Malato.png"> 
 
 # Dataset 
+
+*"cit"*
+
 
 The milestone and first tool that has been exploited in this work is a geodataset with locations of different olive groves, naturally essential in order to be able to both perform epidemic scenarios taking into account actual distances between elements and produce visual content as maps for the diffusion. Obatining this dataset was no easy though. The italian portal for the evolution of the Xylella Emergency **[7]** confirms the presence of such a dataset on the website but there is actually no evidence of it really existing. 
 Hence, the material was obtained by asking directly to Dr. Giovanni Strona, one of the authors of **[4]**, a paper where analysis similar to the ones presented in this work are performed, which mentioned and exploited the geodataset of the Puglia Portal. Dr. Strona, whom I really have to thank for the kindness and the availability, provided me with a shapefile with information regarding the position of 61036 olive groves in Apulia. Each row contains an id of the grove and a geometry consisting in a multipolygon of the interested area. Every analysis which will be presented further is made starting from this geodataset. 
@@ -100,7 +103,7 @@ Having sharply reduced the number of nodes in the network, it is way more agile 
 
 # Model for Epidemic Diffusion
 
-*L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta ‹‹a bordo›› la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate. A questo proposito Daniele Cornara mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute*
+*"L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta ‹‹a bordo›› la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate. A questo proposito Daniele Cornara mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute"*
   
 As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty. Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, a variation of the already existing framework presented in **[1]** is presented. 
 
@@ -147,7 +150,7 @@ The following plots shows an example for one simulation of the process in a time
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_4y.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_averaged_5years.png" width="600" height="600" />
 
 # Control Strategies
-
+*"Cit."*
 Since its initial outbreak in Europe, many different strategies have been adopted in order to control the diffusion of Xylella Fastidiosa **[14,15]**. Up to now, no insecticide treatments have been proving working good in the removal of the infection from a plant, and so the main tactic adopted in order to face the epidemic diffusion is the eradication of the tree itself, or its roguing. Starting from the control strategy exposed in **[1]**, here three different new model for the eradication of infected trees is presented. 
 
 ## Control Strategy 1 - Multiple Factors based Infected Groves Eradication
@@ -193,6 +196,9 @@ The ratio behind this process is to prevent the spreading of the disease through
 
 
 # Conclusion and Further Works
+
+*"Cit."*
+
 
 The goal of this project is to try to understand the enormous problem derived from the spread of Xylella fastidiosa in Apulia. After a general introduction of the problem and an overview of the olive groves issue in the region, it has been tried to obtain a mathematical model for the diffusion of the disease, together with some possible control measures in order to avoid the epidemic to spread. Of course there are potentially plenty of integrations needed for this work. 
 
