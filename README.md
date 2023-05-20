@@ -2,13 +2,13 @@
 
 # Abstract
 
-*"Cit iniziale"*$^1$
+*"Sotto di noi si stendono due mari, quello blu, sulla sinisttra, e un altro, completamente grigio, sulla destra: alberi secchi a perdita d'occhio. [...]lui fa un cenno verso la baia: ‹‹Questa? Be', è la peggior emergenza fitosanitaria al mondo.››"*$^1$
 
 The impact of the diffusion of Xylella Fastidiosa in Italy and, more in general, in Europe, has been under the spotlight of many different works. The diffusion of this bacterium in Apulia has been a strong damage for the region under many different point of view, since olive trees represent a both source of attraction for tourism and a fundamental asset for one of the main economic incomes for the region: the production of olive oil. 
 
 Understanding the theory behind the diffusion of such a disease may be useful for many different purposes: first of all, since the epidemic is still on, a better knowledge of its diffusion process may lead to better containment methods, in order to avoid the disease to infect and destroy trees in such a deliberate and unopposed way as it happened in the first stage of the contagion; furthermore, it is obvious how epidemiology is a topic of current interest during these recent years, and hence the study and the master of such a disease may be very useful for future epidemics and pandemics.
 
-Hence, this project has several goals: The first is to provide a visual descriptive analysis of the distribution of olive groves in Apulia, highlighting differences in density and amount of trees in different part of the regions and exploiting the network analysis framework in order to address different olive groves and parts of the territory with potentially useful metrics; secondly, two different approaches for the simulation of the diffusion of Xylella Fastidiosa are presented, both based on previous works and with strong differences between them, always with a strong focus on visual representation and geospatial plots. Finally, different potential control strategies are considered, with a focus on their feasibility and their actual impact. 
+Hence, this project has several goals: The first is to provide a visual descriptive analysis of the distribution of olive groves in Apulia, highlighting differences in density and amount of trees in different part of the regions and exploiting the network analysis framework in order to address different olive groves and parts of the territory with potentially useful metrics; secondly, a mathematical approach for the simulation of the diffusion of Xylella Fastidiosa are presented, based on an already existing work, always with a strong focus on visual representation and geospatial plots. Finally, different potential control strategies are considered.
 
 
 $^1$ This citation, together with all the other ones at the beginning of each section of this work, comes from the book *"Il Fuoco Invisibile - Storia umana di un disastro naturale"* by Daniele Rielli.
@@ -21,7 +21,7 @@ Xylella fastidiosa is a bacterium that has caused a devastating epidemic in the 
 
 In order to grasp completely the massive diseases caused by the diffusion of such an epidemic in Apulia, it is necessary to stress that olive farming in the southern province of Puglia accounts for about 40% of Italy’s olive oil production and is of major importance for the regional economy **[11]**. Furthermore, olive trees represent a strong symbol for the identity of the region and its people, with an important aesthetic and touristic value and culturale heritage. Because the landscape is dominated by centennial olive trees and a significant part of the olive crops is associated with family-based agriculture activities, the impact of the epidemic had extreme negative implications not only to olive producers and/or olive industry but has threatened the entire local economy, and the symbolic crop and landscape symbol of this territory. 
 
-Indeed, the local nursery industry has suffered severe economic impacts as a result of the strict restrictions on the marketing and movement of plants for planting produced in the infected areas. Although, the infections have been found to be confined in the southern part of the Apulian region, with the rest of the national territory declared Xylella Fastidiosa free, the whole national nursery industry was affected by the unjustified limitations to importation imposed by some countries concerned about the potential risks of buying plants from Italy. As such, the true economic estimation of the overall damage suffered as a consequence of this Xylella Fastidiosa epidemic is overwhelming and difficult to accurately determine **[10]**.
+Indeed, the local nursery industry has suffered severe economic impacts as a result of the strict restrictions on the marketing and movement of plants for planting produced in the infected areas. Although, even if the infections have been found to be confined in the southern part of the Apulian region, with the rest of the national territory declared Xylella Fastidiosa free, the whole national nursery industry was affected by the unjustified limitations to importation imposed by some countries concerned about the potential risks of buying plants from Italy. As such, the true economic estimation of the overall damage suffered as a consequence of this Xylella Fastidiosa epidemic is overwhelming and difficult to accurately determine **[10]**.
 Without dwelling too much into phitosanitary and epidemiological details, we refer to **[6]** for an exhaustive discussion of the losses in terms of provisioning and cultural services, supporting services and impact in ecosystems, environment and biodiversity. 
 
 Before to go deeper into the actual work, in order to provide a visual idea of the impact of Xylella Fastidiosa on at least the landscape of the territory, the picture below shows the Giant of Alliste monumental olive tree before and after having been infected by Xylella Fastidiosa. Photo by Donato Boscia. 
@@ -31,13 +31,15 @@ Before to go deeper into the actual work, in order to provide a visual idea of t
 
 # Dataset 
 
-*"cit"*
+*"‹‹Se gli davi ventimila euro a ettaro vedi che pure il mio vicino non era* chiu *ambientalista››"*
 
 
 The milestone and first tool that has been exploited in this work is a geodataset with locations of different olive groves, naturally essential in order to be able to both perform epidemic scenarios taking into account actual distances between elements and produce visual content as maps for the diffusion. Obatining this dataset was no easy though. The italian portal for the evolution of the Xylella Emergency **[7]** confirms the presence of such a dataset on the website but there is actually no evidence of it really existing. 
-Hence, the material was obtained by asking directly to Dr. Giovanni Strona, one of the authors of **[4]**, a paper where analysis similar to the ones presented in this work are performed, which mentioned and exploited the geodataset of the Puglia Portal. Dr. Strona, whom I really have to thank for the kindness and the availability, provided me with a shapefile with information regarding the position of 61036 olive groves in Apulia. Each row contains an id of the grove and a geometry consisting in a multipolygon of the interested area. Every analysis which will be presented further is made starting from this geodataset. 
+Hence, the material was obtained by asking directly to Dr. Giovanni Strona, one of the authors of **[4]**, a paper where in depth network analysis on the same topic are performed, which mentioned and exploited the geodataset of the Puglia Portal. Dr. Strona, whom I really have to thank for the kindness and the availability, provided me with a shapefile with information regarding the position of 61036 olive groves in Apulia. Each row contains an id of the grove and a geometry consisting in a multipolygon of the interested area. Every analysis which will be presented further is made starting from this geodataset. 
 Of course, since we are dealing not with olive trees but with groves, all analysis performed and methods proposed will be inevitabily a little approximate. Nonetheless, also comparing with other works focusing on the same topic, this situation allows to perform a quite realistic and punctual analysis and simulation of the phenomenon. 
 Before to move on, it needs to be stressed that neither the original shapefile nor the geojson file are uploaded here in this GitHub repository, due mainly to their size. 
+
+The code for the creation of the geodataset is contained in the src/geodataframe.py file.
 
 # Exploratory Data Analysis
 
@@ -45,6 +47,7 @@ Before to move on, it needs to be stressed that neither the original shapefile n
 *‹‹In Salento ci sono novantaseimila ettari di ulivi, li vogliono irrorare tutti.* Comu cazzu faci?››
 
 The goal of this section is to provide a visual descriptive analysis of the dataset and the distribution of olive groves in Apulia region. Starting from a general view of the distribution of the groves in the region, together with their density inside different provinces and municipalities, we'll then focus on a network view of the dataset, in order to extract more information and look at it under a different lens. 
+All the coding material for the following plots and analysis are contained in the src/EDA.py file. 
 
 ## Map of the olive groves in Apulia 
 
@@ -64,12 +67,13 @@ Looking at these two plots, it is immediate to understand, or at least have a co
 
 ## Network Definition
 
-From the geodataframe containing the geometries of different groves, it is possible to define a network where each node is an olive grove and two nodes share an edge if the corresponding olive grove lay at a distance lower than a given threshold. 
-To do so, for each pair of polygons the distance have been calculated considering the nearest points between the two. The two pictures below show an example of this process for the olive groves in the municipality of Lecce. From a randomly chosen target olive bunch, the first choropleth shows the distance of other bunches in the same municipality colored according to their distance. The .gif map shows instead the neighbors of the target olive bunch for different increasing thresholds in meters. 
+From the geodataframe containing the geometries of different groves, it is possible to define a network where each node is an olive grove and two nodes share an edge if the corresponding olive groves lay at a distance lower than a given threshold. 
+To do so, for each pair of polygons the distance have been calculated considering the nearest points between the two. The two pictures below show an example of this process for the olive groves in the municipality of Lecce. From a randomly chosen target olive grove, the first choropleth shows the distance of other groves in the same municipality colored according to their distance. The .gif map shows instead the neighbors of the target olive grove for different increasing thresholds in meters. 
 
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/lecce_dist.png" width="500" height="300" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/neighbors.gif" width="500" height="300" />
 
-This process is performed for every couple of olive bunches in the dataset, assigning to it a distance.  From that, an edgelist is defined in the classical "source-target-distance" way and the consequent network is created.
+This process is performed for every couple of olive groves in the dataset, assigning to it a distance.  From that, an edgelist is defined in the classical "source-target-distance" way and the consequent network is created.
+All the coding for this section is contained in the src/network.py file. 
 
 ### Degree 
 
@@ -92,7 +96,7 @@ The degree of a node could be a useful quantity do determine groves to eradicate
 The betweeness centrality of a node can be defined as the  the extent to which a certain vertex lies on the shortest paths between other vertices. More technically, given a node $x$, it is defined as $b(x) = \sum_{s\neq t \neq x}\frac{\sigma_{s,t}(x)}{\sigma_{s,t}}$, where
 $\sigma_{s,t}$ is the total number of shortest paths from node $s$ to node $t$ and $\sigma_{st}(x)$ is the number of those paths that pass through $x$ (not where $x$ is an end point).
 
-While for degree centrality the procedure was quite fast, the size of the network made it almost impossible to obtain the betweeness centrality of each olive bunch in the geodataframe. From this, the idea was to create a new network where nodes are municipalities of Apulia region and two nodes, intuitively, share a common edge if they share a common border. First, it was needed to determine, given two municipalities, if they actually were neighbors. Below, an example 
+While for degree centrality the procedure was quite fast, the size of the network made it almost impossible to obtain the betweeness centrality of each olive grove in the geodataframe. From this, the idea was to create a new network where nodes are municipalities of Apulia region and two nodes, intuitively, share a common edge if they share a common border. First, it was needed to determine, given two municipalities, if they actually were neighbors. Below, an example 
 
 ![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/intersection_ex.png)
 
@@ -107,10 +111,11 @@ Having sharply reduced the number of nodes in the network, it is way more agile 
 *"L'insetto [...] Si attacca agli automezzi che transitano in campagna e questo è un grosso probelema. Una volta ‹‹a bordo›› la cicalina ha un tempo di sopravvivenza limitato, ma il movimento passivo la può portare comunque oltre quello che sarebbe il suo raggio di spostamento autonomo. Non è un caso che nella prima fase dell'epidemia i nuovi disseccamenti siano apparsi molto spesso lungo le stradali più trafficate. A questo proposito Daniele Cornara mi ha raccontato che una battuta ricorrente fra ricercatori era che le cicaline andassero a prostitute"*
   
 As already mentioned before, grasping and modelling the evolution of Xylella diffusion is a difficult process for several reasons, the main one resulting in the vector of diffusion being an insect, resulting in a huge level of unpredictability and uncertainty. Nonetheless, several works tried to obtain reliable and realistic models for the diffusion of the epidemic. Here, a variation of the already existing framework presented in **[1]** is presented. 
+The implementation of this model is available in the src/diffusion_model.py file. 
 
 ##  Spatially-Explicit Simulation Model
 
-As already said, this model follows the already existing work presented in **[1]**. In order to give a brief overview of the model, the model runs at a yearly temporal scale to correspond with the seasonality of the vector which only feeds on olive trees in the summer months when host grasses dry-out **[17]**. This model spread has two main phases:  local infection growth within a olive grove (i.e. progression of disease within the grove as a fraction of trees infected); and dispersal between groves.  Before to go into all the details, there is with one substantial difference with respect to the original paper that needs to be cited: while in the referred paper the main unit of work were grid cells of 1 $km^2$ in which the targed region was divided, here we refer directly to the actual olive groves to perform the simulation. 
+As already said, this model follows the already existing work presented in **[1]**. In order to give a brief overview of it, the model runs at a yearly temporal scale to correspond with the seasonality of the vector which only feeds on olive trees in the summer months when host grasses dry-out **[17]**. The evolution of the spreading, at each time step, has two main phases:  local infection growth within a olive grove (i.e. progression of disease within the grove as a fraction of trees infected); and dispersal between groves.  Before to go into all the details, there is with one substantial difference with respect to the original paper that needs to be cited: while in the referred paper the main unit of work were grid cells of 1 $km^2$ in which the targed region was divided, here we refer directly to the actual olive groves to perform the simulation. 
 Next, the main phases of the evolution of the process are presented.
 
 ### Self level of infection 
@@ -119,7 +124,7 @@ To model the local infection growth of a single olive grove, a discrete variant 
 
 $N_{t+1}(x,y) = K(x,y)(\frac{N_{t}(x,y)}{K(x,y)})^{e^{-A}}$     **(1)**
 
-where $N_0 = e^{-B}$, $(x,y)$ refers to the target olive grove and $K(x,y) = \Phi(x,y)+a(1-\Phi(x,y))$ is the olive grove infection carrying capacity, where $\Phi(x,y)$ is simply the area of the olive grove divided by the biggest area in the dataset, and $a \in [0, 1]$ is the carrying capacity in nonolive grove habitat, relative to that in olive groves. $A$ and $B$ are constants related to the rate of population growth and the initial proportion of plants infected, fixed at $A=3$ and $B=14.069$, as done in **[1]**. 
+where $N_0 = e^{-B}$, $(x,y)$ refers to the target olive grove and $K(x,y) = \Phi(x,y)+A(1-\Phi(x,y))$ is the olive grove infection carrying capacity, where $\Phi(x,y)$ is simply the area of the olive grove divided by the biggest area in the dataset, and $A \in [0, 1]$ is the carrying capacity in nonolive grove habitat, relative to that in olive groves. $A$ and $B$ are constants related to the rate of population growth and the initial proportion of plants infected, fixed at $A=3$ and $B=14.069$, as done in **[1]**. 
 Intuitively, according to these equations, starting from a given self level of infection, each year an infected olive grove increases its level of infection $N_{t}$ according to its area, in a resulting value between zero and one. Self level of infection is fundamental for the diffusion of the epidemic to other olive groves, as exposed in the next section. 
 
 ### Dispersal
@@ -136,7 +141,7 @@ In practice, what happens in a simulation scenario is that given an infected oli
 
 #### Long-range dispersal 
 
-Modelling long-range dispersal is a more difficult challenge, since lots of external factors, such as wind and cars, may contribute to the long-distance diffusion of the epidemic. Here, an isotropic stochastic dispersal is proposed. To each olive grove a weighted probability of generating a random disperser is assigned, given by $\psi N_{t}(x,y)$, where $\psi \in [0,1]$. Hence, groves with a higher level of self infection will have a higher probability of generating a random dispersal. From this, if $\psi N_{t}(x,y) \geq q$, a random number of dispersers $M \in \{1,...,M_{max}\}$ infect $M$ olive groves according to a 2D Gaussian distribution $N(0,d)$. 
+Modelling long-range dispersal is a more difficult challenge, since lots of external factors, such as wind and cars, may contribute to the long-distance diffusion of the epidemic. Here, an isotropic stochastic dispersal is proposed. A weighted probability of generating a random disperser is assigned to each olive grove, given by $\psi N_{t}(x,y)$, where $\psi \in [0,1]$. Hence, groves with a higher level of self infection will have a higher probability of generating a random dispersal. From this, if $\psi N_{t}(x,y) \geq q$, a random number of dispersers $M \in \{1,...,M_{max}\}$ infect $M$ olive groves according to a 2D Gaussian distribution $N(0,d)$. 
 Constants are fixed as $\psi = 1, q = 0.2, M_{max} = 5$ and $d=20km$.
 
 ### Simulation
@@ -151,8 +156,10 @@ The following plots shows an example for one simulation of the process in a time
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/sim_4y.png" width="400" height="500" /> <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/diffusion_averaged_5years.png" width="600" height="600" />
 
 # Control Strategies
-*"Cit."*
-Since its initial outbreak in Europe, many different strategies have been adopted in order to control the diffusion of Xylella Fastidiosa **[14,15]**. Up to now, no insecticide treatments have been proving working good in the removal of the infection from a plant, and so the main tactic adopted in order to face the epidemic diffusion is the eradication of the tree itself, or its roguing. Starting from the control strategy exposed in **[1]**, here three different new model for the eradication of infected trees is presented. 
+*"[...] Dice che un tempo non troppo lontano quando un ragazzo di un paese vicino si legava a una ragazza di Torchiarolo, la tradizione voleva che tutti i giovani del paese facessero una spedizione punitiva e lo massacrassero di botte[...]. Questo, conclude, è quello che succederà a chi proverà a tagliare i loro ulivi."*
+
+Since its initial outbreak in Europe, many different strategies have been adopted in order to control the diffusion of Xylella Fastidiosa **[14,15]**. Up to now, no insecticide treatments have been proving working good in the removal of the infection from a plant, and so the main tactic adopted in order to face the epidemic diffusion is the eradication of the tree itself, or its roguing. Starting from the control strategy exposed in **[1]**, here two different new model for the eradication of infected trees is presented. 
+Code for these processes available in the src/diffusion_and_vax.py file. 
 
 ## Control Strategy 1 - Multiple Factors based Infected Groves Eradication
 
@@ -179,7 +186,7 @@ As already mentioned before, network science framework can be very useful in ord
 
 Dr. Strona's et al. paper **[4]**, which we already referred to in the dataset section, explicitely used this framework in order to perform a qualitative analysis for the diffusion of Xylella Fastidiosa in Apulia. We'll not replicate this process here, since we already have a potentially well established diffusion model. Nonetheless, we'll exploit the network structure of the geodataset in order to grasp some topological insights on which we'll base this control strategy. In particular, we'll refer to the already mentioned and defined measure of betweennes centrality. 
 
-As previously stated, the calculation of betweennes centrality for the whole network lead to some problems related to computational cost. Reducing the focus on the only province of Lecce (the only one affected during our simulations), it was actually manageable to calculate this index for each olive grove. The following plot shows all the olive groves in the province of Lecce colored according to their betweenness centrality. 
+As previously stated, the calculation of betweennes centrality for the whole network lead to some problems related to computational cost. Reducing the focus on the only province of Lecce (the only one affected during our simulations), though, it was actually manageable to calculate this index for each olive grove. The following plot shows all the olive groves in the province of Lecce colored according to their betweenness centrality. 
 
 
 <img src="https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/betw_lecce.png" width="400" height="500">
@@ -193,12 +200,12 @@ The ratio behind this process is to prevent the spreading of the disease through
 
 # Conclusion and Further Works
 
-*"Cit."*
+*"‹‹In tanti anni di vita non avevo mai visto morire un ulivo, se non per il fuoco o per le trombe d'aria. Io pensavo che fossero immortali.›› "*
 
 
 The goal of this project is to try to understand the enormous problem derived from the spread of Xylella fastidiosa in Apulia. After a general introduction of the problem and an overview of the olive groves issue in the region, it has been tried to obtain a mathematical model for the diffusion of the disease, together with some possible control measures in order to avoid the epidemic to spread. Of course there are potentially plenty of integrations that coul be useful for this work. 
 
-First of all, one important limitation was not to have at disposal a dataset with the olive groves effectively infected during the diffusion period: this would be very useful in order to have a comparison with the results of the model to see if it is actually suitable and at which level. Even if the model presented here is stochastic, comparing the averaged simulation results with the actual situation going on with Xylella would be a good indicator of the goodness of the process. More generally, the lack of data regarding the diffusion of the epidemic has been a severe obstacle: knowing the exact number of infected and eradicated trees would be very useful also in order to compare the presented eradication strategies with the real scenario, and in general to provide a less merely descriptive presentation of the control strategies presented above. More in specific, it was initially planned to perform a confrontation between different eradication scenarios and to compare them according to some potentially meaningful indicators such as percentage of infected individuals after a given time. Unfortunately, given the big stochasticity of the diffusion model, together  --- it would have been necessary to perform lots of simulations over a wide period of time in order to obtain some valuable results, a process that not have been pursued due to computational cost and deadlines. Hopefully, it will be done in the future. 
+First of all, one important limitation was not to have at disposal a dataset with the olive groves effectively infected during the diffusion period: this would be very useful in order to have a comparison with the results of the model to see if it is actually suitable and at which level. Even if the model presented here is stochastic, comparing the averaged simulation results with the actual situation going on with Xylella would be a good indicator of the goodness of the process. More generally, the lack of data regarding the diffusion of the epidemic has been a severe obstacle: knowing the exact number of infected and eradicated trees would be very useful also in order to compare the presented eradication strategies with the real scenario, and in general to provide a less merely descriptive presentation of the control strategies presented above. More in specific, it was initially planned to perform a confrontation between different eradication scenarios and to compare them according to some potentially meaningful indicators such as percentage of infected individuals after a given time. Unfortunately, given the big stochasticity of the diffusion model, it would have been necessary to perform lots of simulations over a wide period of time for all the models presentedin order to obtain some valuable results, a process that have not been carried out due to computational cost and deadlines. Eventually, it will be done in the future. 
 
 Furthermore, a more precise diffusion model which takes into account many other factors could be created: a higher probability of long range diffusion for those infected olive groves laying next to a car road and taking into account weather conditions like wind and rain as factors that modify the probability of a diffusion and are all potentially interesting improvements that could not have been implemented due to both the primary focus of the work and the submission deadline, but nonetheless have been thought of and potentially will be implemented in the future. The same goes to other possible control strategies, like a mix of the two presented here, together with some at priori eradication of strategic trees, or a systematic vaccination of all the ring around some already discovered outbreaks. The choice for these two control strategies presented was due to the possibility of applying network analysis framework in such a topic, together with a more classic and multi factor based strategy. 
 
