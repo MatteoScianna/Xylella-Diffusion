@@ -2,7 +2,7 @@
 
 # Abstract
 
-*"Sotto di noi si stendono due mari, quello blu, sulla sinisttra, e un altro, completamente grigio, sulla destra: alberi secchi a perdita d'occhio. [...]lui fa un cenno verso la baia: ‹‹Questa? Be', è la peggior emergenza fitosanitaria al mondo.››"*$^1$
+*"Sotto di noi si stendono due mari, quello blu, sulla sinistra, e un altro, completamente grigio, sulla destra: alberi secchi a perdita d'occhio. [...]lui fa un cenno verso la baia: ‹‹Questa? Be', è la peggior emergenza fitosanitaria al mondo.››"*$^1$
 
 The impact of the diffusion of Xylella Fastidiosa in Italy and, more in general, in Europe, has been under the spotlight of many different works. The diffusion of this bacterium in Apulia has been a strong damage for the region under many different point of view, since olive trees represent a both source of attraction for tourism and a fundamental asset for one of the main economic incomes for the region: the production of olive oil. 
 
@@ -98,7 +98,7 @@ $\sigma_{s,t}$ is the total number of shortest paths from node $s$ to node $t$ a
 
 While for degree centrality the procedure was quite fast, the size of the network made it almost impossible to obtain the betweeness centrality of each olive grove in the geodataframe. From this, the idea was to create a new network where nodes are municipalities of Apulia region and two nodes, intuitively, share a common edge if they share a common border. First, it was needed to determine, given two municipalities, if they actually were neighbors. Below, an example 
 
-![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/intersection_ex.png)
+![alt text](https://github.com/MatteoScianna/Xylella-Diffusion/blob/main/img/intersection.png)
 
 From this, it was easy to create another "source-target" edgelist and define the network of municipalities. 
 Having sharply reduced the number of nodes in the network, it is way more agile to calculate the betweeness centrality of each node. Below, a choroplet of the municipalities coloured according to their betweeness centrality. 
