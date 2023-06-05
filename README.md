@@ -1,4 +1,4 @@
-# Xylella-Diffusion  - Network and Geospatial analysis of xylella fastidiosa diffusion in Apulia
+# Xylella-Diffusion  - Geospatial and Network analysis of xylella fastidiosa diffusion in Apulia
 
 # Abstract
 
